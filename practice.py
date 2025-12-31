@@ -1,40 +1,34 @@
-import numpy as np
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report
+import tensorflow as tf
+from tensorflow.keras import layers, models
+import matplotlib.pyplot as plt
 
-# 1. Load the dataset
-# Scikit-learn has built-in datasets so you don't need to download a CSV.
-iris = load_iris("C:/Users/adity/OneDrive/Desktop/VS code/Jupyter/iris_data.csv")
-X = iris.data    # Features: sepal length, sepal width, petal length, petal width
-y = iris.target  # Labels: 0 (setosa), 1 (versicolor), 2 (virginica)
+# 1. Load the MNIST dataset (handwritten digits)
+print("Loading data...")
+mnist = tf.keras.datasets.mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
 
-# 2. Split the data
-# We use 80% of the data for training and 20% for testing.
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# 2. Normalize pixel values to be between 0 and 1
+x_train, x_test = x_train / 255.0, x_test / 255.0
 
-# 3. Initialize the Model
-# Random Forest is a powerful ensemble method.
-model = RandomForestClassifier(n_estimators=100, random_state=42)
+# 3. Build the Neural Network (Sequential Model)
+model = models.Sequential([
+    layers.Flatten(input_shape=(28, 28)),  # Flatten 28x28 images to a 1D vector
+    layers.Dense(128, activation='relu'),  # Hidden layer with 128 neurons
+    layers.Dropout(0.2),                   # Dropout to prevent overfitting
+    layers.Dense(10)                       # Output layer (10 digits)
+])
 
-# 4. Train the Model (Fit)
-print("Training the model...")
-model.fit(X_train, y_train)
+# 4. Compile the model
+loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+model.compile(optimizer='adam',
+              loss=loss_fn,
+              metrics=['accuracy'])
 
-# 5. Make Predictions
-predictions = model.predict(X_test)
+# 5. Train the model
+print("Training model...")
+model.fit(x_train, y_train, epochs=5)
 
-# 6. Evaluate
-accuracy = accuracy_score(y_test, predictions)
-print(f"\nModel Accuracy: {accuracy * 100:.2f}%")
-print("\nClassification Report:")
-print(classification_report(y_test, predictions, target_names=iris.target_names))
-
-# 7. (Optional) Test with a new, random sample
-# Let's invent a flower with measurements [5.1, 3.5, 1.4, 0.2]
-new_sample = np.array([[5.1, 3.5, 1.4, 0.2]])
-prediction_index = model.predict(new_sample)
-predicted_species = iris.target_names[prediction_index][0]
-
-print(f"Prediction for sample {new_sample}: {predicted_species}")
+# 6. Evaluate accuracy
+print("\nEvaluating...")
+test_loss, test_acc = model.evaluate(x_test,  y_test, verbose=2)
+print(f'\nTest accuracy: {test_acc*100:.2f}%')
