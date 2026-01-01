@@ -1,34 +1,71 @@
-import tensorflow as tf
-from tensorflow.keras import layers, models
-import matplotlib.pyplot as plt
+# robot class
 
-# 1. Load the MNIST dataset (handwritten digits)
-print("Loading data...")
-mnist = tf.keras.datasets.mnist
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
+class Robot:
+    def __init__(self,name, color):
+        self.name = name #attribute 
+        self.color = color # attribute
+        self.battery =100
+    
 
-# 2. Normalize pixel values to be between 0 and 1
-x_train, x_test = x_train / 255.0, x_test / 255.0
+    def introduce(self):
+        print(f"hello! I am {self.name}, a {self.color} robot.")
 
-# 3. Build the Neural Network (Sequential Model)
-model = models.Sequential([
-    layers.Flatten(input_shape=(28, 28)),  # Flatten 28x28 images to a 1D vector
-    layers.Dense(128, activation='relu'),  # Hidden layer with 128 neurons
-    layers.Dropout(0.2),                   # Dropout to prevent overfitting
-    layers.Dense(10)                       # Output layer (10 digits)
-])
+    def move(self, steps):
+        self.battery-= steps
+        print(f"{self.name} moved {steps} steps. Battery is now {self.battery}%")
+    
 
-# 4. Compile the model
-loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-model.compile(optimizer='adam',
-              loss=loss_fn,
-              metrics=['accuracy'])
 
-# 5. Train the model
-print("Training model...")
-model.fit(x_train, y_train, epochs=5)
+my_bot = Robot("griffen","orange")
 
-# 6. Evaluate accuracy
-print("\nEvaluating...")
-test_loss, test_acc = model.evaluate(x_test,  y_test, verbose=2)
-print(f'\nTest accuracy: {test_acc*100:.2f}%')
+my_bot.introduce()
+my_bot.move(150)
+
+# student class 
+class Student:
+    def __init__(self, name , grade):
+        self.name = name
+        self.grade = grade
+    
+
+    def study(self):
+        print(f"{self.name} is studying")
+
+    def Get_grade(self):
+        print(f"{self.name} is in grade {self.grade}")
+
+
+aditya = Student("Aditya Namdev","12")
+
+aditya.study()
+aditya.Get_grade()
+
+
+# bankaccount class
+
+class BankAccount:
+    def __init__(self,account_holder , balance):
+        self.account_holder = account_holder
+        self.balance = balance
+
+    def deposit(self,amount):
+        self.balance = self.balance+amount
+        print(f"The amount {amount} you entered is deposited to you account. your new balance is {self.balance}")
+
+
+
+
+    def withdraw(self, amount):
+        if (self.balance >= amount):
+            self.balance=self.balance-amount
+            print(f"The amount {amount} is been withdrawed. remaining balance is {self.balance}")
+        else:
+            print("Insufficient funds")
+
+
+a = BankAccount("Aditya",0)
+a.deposit(100)
+a.withdraw(5)
+
+
+
