@@ -1,3 +1,4 @@
+#1 jan 2026
 # robot class
 
 class Robot:
@@ -18,8 +19,8 @@ class Robot:
 
 my_bot = Robot("griffen","orange")
 
-my_bot.introduce()
-my_bot.move(150)
+# my_bot.introduce()
+# my_bot.move(150)
 
 # student class 
 class Student:
@@ -37,8 +38,8 @@ class Student:
 
 aditya = Student("Aditya Namdev","12")
 
-aditya.study()
-aditya.Get_grade()
+# aditya.study()
+# aditya.Get_grade()
 
 
 # bankaccount class
@@ -64,8 +65,35 @@ class BankAccount:
 
 
 a = BankAccount("Aditya",0)
-a.deposit(100)
-a.withdraw(5)
+# a.deposit(100)
+# a.withdraw(5)
 
 
 
+#2 jan 2026
+
+#Avenger's
+class Avenger:
+    def __init__(self, name, health=100, power=10):
+        self.name = name
+        self.health = health
+        self.power = power
+
+    def take_damage(self,damage):
+        self.health -= damage
+        print(f"{self.name} took {damage} damage. Health is now {self.health}")
+        if self.health <= 0:
+            print(f"{self.name} has fallen!")
+        
+    def heal(self):
+        self.health += 20 
+        if self.health >100:
+            self.health = 100
+            print(f"New health is {self.health}")
+
+
+ironman = Avenger("Ironman",100,100)
+
+ironman.take_damage(50)
+ironman.heal()
+ironman.take_damage(60)
