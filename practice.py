@@ -110,7 +110,7 @@ def count_frequency(nums):
             counts[num] = 1
     return counts
 
-print(count_frequency([1,2,3,1,1,2,1]))
+# print(count_frequency([1,2,3,1,1,2,1]))
 
 
 def two_sum(nums, target):
@@ -123,4 +123,26 @@ def two_sum(nums, target):
         
         seen[num] = i
 
-print(two_sum([5, 5, 2], 10))
+# print(two_sum([5, 5, 2], 10))
+
+
+
+##
+# 4 jan 26
+
+squares = []
+for x in range(10):
+    squares.append(x*x)
+
+# print(squares)
+
+squares = [x *x for x in range(15)]
+
+# print(squares)
+
+
+
+# the initials generator 
+names = ["Iron man", "Thor", "Hulk", "Spiderman"]
+for name in names:
+    print(name[0])
