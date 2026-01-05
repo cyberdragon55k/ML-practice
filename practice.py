@@ -146,3 +146,24 @@ squares = [x *x for x in range(15)]
 names = ["Iron man", "Thor", "Hulk", "Spiderman"]
 for name in names:
     print(name[0])
+
+
+
+
+# 5 jan 26
+def add_to_cart(item, cart=[]):
+    cart.append(item)
+    return cart
+# print(add_to_cart("Apple"))
+# print(add_to_cart("banana"))
+
+
+users = [
+    {'name': 'Admin_01', 'active': True},
+    {'name': 'Guest_User', 'active': False},
+    {'name': 'Super_Dave', 'active': True},
+    {'name': 'Lurker_99', 'active': False}
+]
+
+if (users.active) == True:
+    print(users)
