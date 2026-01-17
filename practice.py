@@ -14,16 +14,28 @@
 # a = bubble_sort(arr)
 # print(a)
 
-def linear_search(arr, target):
-    for index, value in enumerate(arr):
-        if value == target:
-            return index
-    return -1
+# def linear_search(arr, target):
+#     for index, value in enumerate(arr):
+#         if value == target:
+#             return index
+#     return -1
 
-data = [10,50,30,70,80,20]
-target = 30
-result = linear_search(data,target)
-if result != -1:
-    print(f"element found at index: {result}")
-else:
-    print("element not found")
+# data = [10,50,30,70,80,20]
+# target = 30
+# result = linear_search(data,target)
+# if result != -1:
+#     print(f"element found at index: {result}")
+# else:
+#     print("element not found")
+
+
+
+list = [10,50,30]
+if 30 in list:
+    print('found it ')
+
+try:
+    idx = list.index(30)
+    print(f"index is {idx}")
+except ValueError:
+    print('not found ')
