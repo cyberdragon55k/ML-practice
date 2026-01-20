@@ -40,23 +40,49 @@
 # except ValueError:
 #     print('not found ')
 
-def binary_search(arr, target):
-    low = 0 
-    high = len(arr) -1
+# def binary_search(arr, target):
+#     low = 0 
+#     high = len(arr) -1
 
-    while low <= high:
-        mid = (low+high) //2
-        guess = arr[mid]
-        if guess == target:
-            return mid
-        elif guess >target:
-            high = mid -1
-        else:
-            low = mid +1
-    return -1
-list = [1,2,3,5,7,9,11,55]
+#     while low <= high:
+#         mid = (low+high) //2
+#         guess = arr[mid]
+#         if guess == target:
+#             return mid
+#         elif guess >target:
+#             high = mid -1
+#         else:
+#             low = mid +1
+#     return -1
+# list = [1,2,3,5,7,9,11,55]
 
-print(binary_search(list,7))
+# print(binary_search(list,7))
 
-print(binary_search(list,55))
+# print(binary_search(list,55))
 
+# Breadth-First Search (BFS)
+from collections import deque
+def bfs(graph, start_node):
+    visited = set()
+    queue = deque([start_node])
+    visited.add(start_node)
+
+    while queue:
+        current_node = queue.popleft()
+        print(current_node, end=' ')
+
+        for neighbor in graph[current_node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
+}
+
+# Output: A B C D E F
+bfs(graph, 'C')
