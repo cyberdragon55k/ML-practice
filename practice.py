@@ -61,28 +61,37 @@
 # print(binary_search(list,55))
 
 # Breadth-First Search (BFS)
-from collections import deque
-def bfs(graph, start_node):
-    visited = set()
-    queue = deque([start_node])
-    visited.add(start_node)
+# from collections import deque
+# def bfs(graph, start_node):
+#     visited = set()
+#     queue = deque([start_node])
+#     visited.add(start_node)
 
-    while queue:
-        current_node = queue.popleft()
-        print(current_node, end=' ')
+#     while queue:
+#         current_node = queue.popleft()
+#         print(current_node, end=' ')
 
-        for neighbor in graph[current_node]:
-            if neighbor not in visited:
-                visited.add(neighbor)
-                queue.append(neighbor)
-graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': ['F'],
-    'F': []
-}
+#         for neighbor in graph[current_node]:
+#             if neighbor not in visited:
+#                 visited.add(neighbor)
+#                 queue.append(neighbor)
+# graph = {
+#     'A': ['B', 'C'],
+#     'B': ['D', 'E'],
+#     'C': ['F'],
+#     'D': [],
+#     'E': ['F'],
+#     'F': []
+# }
 
-# Output: A B C D E F
-bfs(graph, 'C')
+# # Output: A B C D E F
+# bfs(graph, 'C')
+
+
+
+#x = 20 
+#y = 40
+
+x,y = 20,40
+x,y = y,x+20
+print(f"the value of x :{x}, the value of y = {y}")
