@@ -89,9 +89,26 @@
 
 
 
-#x = 20 
-#y = 40
 
-x,y = 20,40
-x,y = y,x+20
-print(f"the value of x :{x}, the value of y = {y}")
+class product:
+    def __init__(self,name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+    def sell(self, amount):
+        if amount > self.quantity:
+            print(f"error : no enough {self.name} in stock ! (only {self.quantity})")
+        else:
+            self.quantity -= amount
+            print(f"sold {amount} {self.name}(s). remaining: {self.quantity}")
+    def restock(self, amount):
+        self.quantity += amount
+        print(f"restocked{amount} {self.name}s total :{self.quantity}")
+    def __str__(self):
+        return f"protduct:{self.name}|  price {self.price} | stock: {self.quantity}" 
+    
+laptop  = product("gaming laptop", 1200,5)
+print(laptop)
+laptop.sell(2)
+laptop.sell(10)
+laptop.restock(5)
