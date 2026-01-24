@@ -90,25 +90,39 @@
 
 
 
-class product:
-    def __init__(self,name, price, quantity):
-        self.name = name
-        self.price = price
-        self.quantity = quantity
-    def sell(self, amount):
-        if amount > self.quantity:
-            print(f"error : no enough {self.name} in stock ! (only {self.quantity})")
-        else:
-            self.quantity -= amount
-            print(f"sold {amount} {self.name}(s). remaining: {self.quantity}")
-    def restock(self, amount):
-        self.quantity += amount
-        print(f"restocked{amount} {self.name}s total :{self.quantity}")
-    def __str__(self):
-        return f"protduct:{self.name}|  price {self.price} | stock: {self.quantity}" 
+# class product:
+#     def __init__(self,name, price, quantity):
+#         self.name = name
+#         self.price = price
+#         self.quantity = quantity
+#     def sell(self, amount):
+#         if amount > self.quantity:
+#             print(f"error : no enough {self.name} in stock ! (only {self.quantity})")
+#         else:
+#             self.quantity -= amount
+#             print(f"sold {amount} {self.name}(s). remaining: {self.quantity}")
+#     def restock(self, amount):
+#         self.quantity += amount
+#         print(f"restocked{amount} {self.name}s total :{self.quantity}")
+#     def __str__(self):
+#         return f"protduct:{self.name}|  price {self.price} | stock: {self.quantity}" 
     
-laptop  = product("gaming laptop", 1200,5)
-print(laptop)
-laptop.sell(2)
-laptop.sell(10)
-laptop.restock(5)
+# laptop  = product("gaming laptop", 1200,5)
+# print(laptop)
+# laptop.sell(2)
+# laptop.sell(10)
+# laptop.restock(5)
+
+
+def two_sum(nums, target):
+    lookup = {}
+    
+    for i, num in enumerate(nums):
+        needed = target - num
+        if needed in lookup:
+            return [lookup[needed], i]
+        lookup[num] = i
+    return []
+
+nums = [2, 7, 11, 15]
+print(f"Indices: {two_sum(nums, 9)}")
