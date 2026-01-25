@@ -97,7 +97,7 @@
 #         self.quantity = quantity
 #     def sell(self, amount):
 #         if amount > self.quantity:
-#             print(f"error : no enough {self.name} in stock ! (only {self.quantity})")
+#             print(f"error : no\enough {self.name} in stock ! (only {self.quantity})")
 #         else:
 #             self.quantity -= amount
 #             print(f"sold {amount} {self.name}(s). remaining: {self.quantity}")
@@ -114,15 +114,38 @@
 # laptop.restock(5)
 
 
-def two_sum(nums, target):
-    lookup = {}
+# def two_sum(nums, target):
+#     lookup = {}
     
-    for i, num in enumerate(nums):
-        needed = target - num
-        if needed in lookup:
-            return [lookup[needed], i]
-        lookup[num] = i
-    return []
+#     for i, num in enumerate(nums):
+#         needed = target - num
+#         if needed in lookup:
+#             return [lookup[needed], i]
+#         lookup[num] = i
+#     return []
 
-nums = [2, 7, 11, 15]
-print(f"Indices: {two_sum(nums, 9)}")
+# nums = [2, 7, 11, 15]
+# print(f"Indices: {two_sum(nums, 9)}")
+
+def __init__(self, title, author, isbn): # Added comma here
+    self.title = title
+    self.author = author 
+    self.isbn = isbn
+    self.is_available = True
+
+class library:
+    def __init__(self):
+        self.books = {}
+    def add_book(self, book):
+        self.books[book.isbn] = book
+        print(f"Added: {book.title}")
+
+    def find_book(self, isbn):
+        return self.books.get(isbn, "Book not found.")
+
+    def checkout(self, isbn):
+        book = self.books.get(isbn)
+        if book and book.is_available:
+            book.is_available = False
+            return f"You've checked out {book.title}."
+        return "Book is either unavailable or doesn't exist."
