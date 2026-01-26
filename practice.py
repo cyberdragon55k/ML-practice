@@ -77,75 +77,87 @@
 #                 queue.append(neighbor)
 # graph = {
 #     'A': ['B', 'C'],
-#     'B': ['D', 'E'],
-#     'C': ['F'],
-#     'D': [],
-#     'E': ['F'],
-#     'F': []
-# }
+# #     'B': ['D', 'E'],
+# #     'C': ['F'],
+# #     'D': [],
+# #     'E': ['F'],
+# #     'F': []
+# # }
 
-# # Output: A B C D E F
-# bfs(graph, 'C')
-
-
+# # # Output: A B C D E F
+# # bfs(graph, 'C')
 
 
-# class product:
-#     def __init__(self,name, price, quantity):
-#         self.name = name
-#         self.price = price
-#         self.quantity = quantity
-#     def sell(self, amount):
-#         if amount > self.quantity:
-#             print(f"error : no\enough {self.name} in stock ! (only {self.quantity})")
-#         else:
-#             self.quantity -= amount
-#             print(f"sold {amount} {self.name}(s). remaining: {self.quantity}")
-#     def restock(self, amount):
-#         self.quantity += amount
-#         print(f"restocked{amount} {self.name}s total :{self.quantity}")
-#     def __str__(self):
-#         return f"protduct:{self.name}|  price {self.price} | stock: {self.quantity}" 
+
+
+# # class product:
+# #     def __init__(self,name, price, quantity):
+# #         self.name = name
+# #         self.price = price
+# #         self.quantity = quantity
+# #     def sell(self, amount):
+# #         if amount > self.quantity:
+# #             print(f"error : no\enough {self.name} in stock ! (only {self.quantity})")
+# #         else:
+# #             self.quantity -= amount
+# #             print(f"sold {amount} {self.name}(s). remaining: {self.quantity}")
+# #     def restock(self, amount):
+# #         self.quantity += amount
+# #         print(f"restocked{amount} {self.name}s total :{self.quantity}")
+# #     def __str__(self):
+# #         return f"protduct:{self.name}|  price {self.price} | stock: {self.quantity}" 
     
-# laptop  = product("gaming laptop", 1200,5)
-# print(laptop)
-# laptop.sell(2)
-# laptop.sell(10)
-# laptop.restock(5)
+# # laptop  = product("gaming laptop", 1200,5)
+# # print(laptop)
+# # laptop.sell(2)
+# # laptop.sell(10)
+# # laptop.restock(5)
 
 
-# def two_sum(nums, target):
-#     lookup = {}
+# # def two_sum(nums, target):
+# #     lookup = {}
     
-#     for i, num in enumerate(nums):
-#         needed = target - num
-#         if needed in lookup:
-#             return [lookup[needed], i]
-#         lookup[num] = i
-#     return []
+# #     for i, num in enumerate(nums):
+# #         needed = target - num
+# #         if needed in lookup:
+# #             return [lookup[needed], i]
+# #         lookup[num] = i
+# #     return []
 
-# nums = [2, 7, 11, 15]
-# print(f"Indices: {two_sum(nums, 9)}")
+# # nums = [2, 7, 11, 15]
+# # print(f"Indices: {two_sum(nums, 9)}")
 
-def __init__(self, title, author, isbn): # Added comma here
-    self.title = title
-    self.author = author 
-    self.isbn = isbn
-    self.is_available = True
+# def __init__(self, title, author, isbn): # Added comma here
+#     self.title = title
+#     self.author = author 
+#     self.isbn = isbn
+#     self.is_available = True
 
-class library:
-    def __init__(self):
-        self.books = {}
-    def add_book(self, book):
-        self.books[book.isbn] = book
-        print(f"Added: {book.title}")
+# class library:
+#     def __init__(self):
+#         self.books = {}
+#     def add_book(self, book):
+#         self.books[book.isbn] = book
+#         print(f"Added: {book.title}")
 
-    def find_book(self, isbn):
-        return self.books.get(isbn, "Book not found.")
+#     def find_book(self, isbn):
+#         return self.books.get(isbn, "Book not found.")
 
-    def checkout(self, isbn):
-        book = self.books.get(isbn)
-        if book and book.is_available:
-            book.is_available = False
-            return f"You've checked out {book.title}."
-        return "Book is either unavailable or doesn't exist."
+#     def checkout(self, isbn):
+#         book = self.books.get(isbn)
+#         if book and book.is_available:
+#             book.is_available = False
+#             return f"You've checked out {book.title}."
+#         return "Book is either unavailable or doesn't exist."
+
+import heapq
+from collections import Counter
+
+def top_k_frequent(nums, k):
+
+    count = Counter(nums)
+    
+
+    return heapq.nlargest(k, count.keys(), key=count.get)
+
+print(top_k_frequent([1,1,1,2,2,3], 2))
