@@ -150,14 +150,22 @@
 #             return f"You've checked out {book.title}."
 #         return "Book is either unavailable or doesn't exist."
 
-import heapq
-from collections import Counter
+# import heapq
+# from collections import Counter
 
-def top_k_frequent(nums, k):
+# def top_k_frequent(nums, k):
 
-    count = Counter(nums)
+#     count = Counter(nums)
     
 
-    return heapq.nlargest(k, count.keys(), key=count.get)
+#     return heapq.nlargest(k, count.keys(), key=count.get)
 
-print(top_k_frequent([1,1,1,2,2,3], 2))
+# print(top_k_frequent([1,1,1,2,2,3], 2))
+
+arr = [10, 20, 30, 40, 50]
+n = len(arr)
+
+for i in range(n // 2):
+    arr[i], arr[n - 1 - i] = arr[n - 1 - i], arr[i]
+
+print("Reversed array:", arr)
