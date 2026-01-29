@@ -162,12 +162,16 @@
 
 # print(top_k_frequent([1,1,1,2,2,3], 2))
 
-arr = [10, 20, 30, 40, 50]
-n = len(arr)
+# arr = [10, 20, 30, 40, 50]
+# n = len(arr)
 
-for i in range(n // 2):
-    arr[i], arr[n - 1 - i] = arr[n - 1 - i], arr[i]
+# for i in range(n // 2):
+#     arr[i], arr[n - 1 - i] = arr[n - 1 - i], arr[i]
 
-# print("Reversed array:", arr)
-arr = [3,2,2,2,2,2,2,2,2]
-print(arr)
+# # print("Reversed array:", arr)
+# arr = [3,2,2,2,2,2,2,2,2]
+# print(arr)
+
+rows = 5
+for i in range(1,rows +1):
+    print('*' * i)
