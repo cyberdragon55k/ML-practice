@@ -227,4 +227,6 @@ list = [1,2,2,3,4,5,5,5]
 # print(list[4])
 # print(list[4])
 
+
 print(list[6])
+print(list[1])
