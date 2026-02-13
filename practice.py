@@ -230,3 +230,4 @@ list = [1,2,2,3,4,5,5,5]
 
 
 print(list[-5])
+print(list[-4])
