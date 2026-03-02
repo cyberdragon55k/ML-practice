@@ -1,14 +1,18 @@
-arr = [10,20,30,40]
-for i, arr in enumerate(arr):
-    print(i,arr)
+import random 
+def guess_the_number():
+    secret_number = random.randint(1,100)
+    attempts = 0
 
-#123
+    print("I'm thinking of a number btw 1 and 100.")
+    while True:
+        guess = int(input("take a guess : "))
+        attempts +=1
 
-
-#109999999
-
-
-
-#53535
-
-#4566
+        if guess <secret_number:
+            print("too low")
+        elif guess > secret_number:
+            print("too high")
+        else:
+            print(f"correct number {attempts} tries.")
+            break
+guess_the_number()
