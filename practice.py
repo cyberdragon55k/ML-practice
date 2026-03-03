@@ -1,7 +1,7 @@
 import random 
 def guess_the_number():
     secret_number = random.randint(1,100)
-    attempts = 0
+    attempts = 5
 
     print("I'm thinking of a number btw 1 and 100.")
     while True:
