@@ -17,17 +17,4 @@ def guess_the_number():
             break
 guess_the_number()
 
-#11234567
-
-
-
-
-
-# hello
-
-#aditya 
-
-
-
-#12000010990
-#1155555555
+#09874232435
