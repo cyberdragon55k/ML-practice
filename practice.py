@@ -17,15 +17,4 @@ def guess_the_number():
             break
 guess_the_number()
 
-#09874232435
-
-
-
-
-#122222222
-
-
-
-
-#0000000000000000000000000000000
-#00938489595988
+#aditys hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhkkkkkkkkkkkkkkkk
