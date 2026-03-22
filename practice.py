@@ -15,4 +15,6 @@ points2d_sort = sorted(points2d, key=lambda x:x[0] +x[1])
 print(points2d)
 print(points2d_sort)
 
+print(points2d)
+#12000999
 
