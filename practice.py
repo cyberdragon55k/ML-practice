@@ -1,20 +1,16 @@
-add10 = lambda x:x +10
-print(add10(5))
-def add10_fun(x):
-    return x+10
+a = [1,2,3,4,5]
+# b = 2 *a
 
-mult = lambda x,y:x*y
-# print(mult(3,10))
+b = map(lambda x:x*2 ,a)
+print(list(b))
 
+from functools import reduce
+a = [1,2,3,4,5,6]
 
-points2d= [(1,2),(15,1),(5,-1),(10,4)]
-def sortbyy(x):
-    return x[1]
+product_a = reduce(lambda x,y: x*y,a)
 
-points2d_sort = sorted(points2d, key=lambda x:x[0] +x[1])
-print(points2d)
-print(points2d_sort)
+print(product_a)
 
-print(points2d)
-#12000999
+#error and exceptions
 
+a = 5 print(a)
