@@ -21,3 +21,6 @@ if x < 0:
 
 
 #new code in copy note book 
+
+import logging
+logging.debug("this is a debuging msg")
