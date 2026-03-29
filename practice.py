@@ -1,15 +1,21 @@
-def start_end_decorator(func):
-    
-    def wrapper():
-        print("Start")
-        func()
-        print("End")
-    return wrapper 
+import functools
+def repeat(num_times):
+    def decorator_repeat(func):
+        @functools.wraps(func)
 
-@start_end_decorator
-def print_name():
-    print('aditya')
+        def wrapper(*args, **kwargs):
+            for _ in range(num_times):
+                result = func(*args,*kwargs)
+                return result
+        return wrapper
+    return decorator_repeat
 
-# print_name = start_end_decorator(print_name)
+@repeat(num_times=3)
+def greet(name):
+    print(f'hello {name}')
+    return greet
 
-print_name()
+
+greet("aditya")
+
+greet
