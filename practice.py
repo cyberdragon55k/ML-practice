@@ -12,8 +12,10 @@ def greet(fx):
 def hello():
     print("hello world")
 
+@greet
 def add(a, b):
     print(a+b)
 
 
 hello()
+#
