@@ -1,21 +1,19 @@
-import functools
-def repeat(num_times):
-    def decorator_repeat(func):
-        @functools.wraps(func)
+def hello():
+    print("hello world")
 
-        def wrapper(*args, **kwargs):
-            for _ in range(num_times):
-                result = func(*args,*kwargs)
-                return result
-        return wrapper
-    return decorator_repeat
+def greet(fx):
+    def mfx():
+        print("good morning")
+        fx()
+        print("thanks for using this func")
+    return mfx
 
-@repeat(num_times=3)
-def greet(name):
-    print(f'hello {name}')
-    return greet
+@greet
+def hello():
+    print("hello world")
+
+def add(a, b):
+    print(a+b)
 
 
-greet("aditya")
-
-greet
+hello()
