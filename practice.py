@@ -11,3 +11,10 @@ perimeter = length * breath
 print(f"the area of the rectangle is {perimeter} cm ")
 
 
+
+
+
+#1 april
+print("this is a perimeter of rectangle")
+
+
