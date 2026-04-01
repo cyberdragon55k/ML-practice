@@ -1,21 +1,13 @@
-def hello():
-    print("hello world")
-
-def greet(fx):
-    def mfx():
-        print("good morning")
-        fx()
-        print("thanks for using this func")
-    return mfx
-
-@greet
-def hello():
-    print("hello world")
-
-@greet
-def add(a, b):
-    print(a+b)
+# write a program to take input of length and width of a retangle
 
 
-hello()
-#
+length= int(input("enter the length (in cm)  :"))
+breath = int(input("enter the breadth of the rectangle (in cm) :"))
+
+
+perimeter = length * breath
+
+
+print(f"the area of the rectangle is {perimeter} cm ")
+
+
