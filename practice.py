@@ -1,20 +1,24 @@
-# write a program to take input of length and width of a retangle
+from PIL import Image, ImageEnhance, ImageFilter
 
+# Load image
+img_path = 'C:\Users\adity\OneDrive\Desktop\VS code\Jupyter\WhatsApp Image 2026-04-02 at 11.56.16 AM.jpeg'
+img = Image.open(img_path)
 
-length= int(input("enter the length (in cm)  :"))
-breath = int(input("enter the breadth of the rectangle (in cm) :"))
+# Upscale (2x)
+img_upscaled = img.resize((img.width*2, img.height*2), Image.LANCZOS)
 
+# Enhance sharpness and contrast
+enhancer_sharp = ImageEnhance.Sharpness(img_upscaled)
+img_sharp = enhancer_sharp.enhance(2.0)
 
-perimeter = length * breath
+enhancer_contrast = ImageEnhance.Contrast(img_sharp)
+img_final = enhancer_contrast.enhance(1.3)
 
+# Slight denoise / smooth
+img_final = img_final.filter(ImageFilter.UnsharpMask(radius=2, percent=150, threshold=3))
 
-print(f"the area of the rectangle is {perimeter} cm ")
+# Save enhanced image
+output_path = '/mnt/data/enhanced_diagram.png'
+img_final.save(output_path)
 
-
-
-
-
-#1 april
-print("this is a perimeter of rectangle")
-
-
+output_path
