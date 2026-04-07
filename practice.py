@@ -1,27 +1,9 @@
-# decorators = a function that extends the behavior of another function w/o modify 
-# the base funtion pass the base function as an argument to the decoratot
-# 
-#   @add_sprinkes
-#   get_ice_cream(" vanilla")
-
-def add_sprinkles(func):
-    def wrapper():
-        print("you add sprinkles")
-        func()
-    return wrapper
+# * args    =  allow you to pass multiple non key arguments
+# ** kwargs =  allow you to pass multiple keywords arguments 
 
 
-def add_fud(func):
-    def wrapper():
-        print("you add fudge")
-        func()
-    return wrapper
+def display_name(*args):
+    for arg in args:
+        print(arg, end=" ")
 
-@add_sprinkles
-@add_fud
-def get_ice_cream():
-    print("here is you ice cream")
-
-get_ice_cream()
-
-get_ice_cream()
+display_name("lt.", "Aditya" , "Namdev","1")
