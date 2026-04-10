@@ -1,26 +1,9 @@
-#threading and multiprocessing
+def fo(a,b=2,*args, **kwargs):
+    print(a,b)
+    for arg in args:
+        print(args)
+    for key in kwargs:
+        print(key,kwargs[key])
 
 
-from threading import Thread
-import os 
-import time 
-def square_number():
-    for i in range(100):
-        i *i
-        time.sleep(0.1)
-
-
-thread = []
-
-num_thread = os.cpu_count()
-
-for i in range(num_thread):
-    p  = Thread(target=square_number)
-    thread.append(p) 
-
-for t in thread:
-    t.start()
-for t in thread:
-    t.join()
-
-print("end main")
+fo(1, 2, 3, 4,5,six=6,seven=7)
