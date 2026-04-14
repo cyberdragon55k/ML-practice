@@ -9,7 +9,9 @@ def fo(a,b=2,*args, **kwargs):
 fo(1, 2, 3, 4,5,six=6,seven=7)
 
 
-def add(a,b):
-    print(a + b)
+def add(a,b,c):
+    print(a + b -c)
 
-add(9,5)
+
+
+add(3,33,5)
