@@ -12,11 +12,4 @@ fo(1, 2, 3, 4,5,six=6,seven=7)
 def add(a,b,c):
     print(a + b -c)
 
-
-
-add(3,33,5)
-add(3,33,5)
-add(3,33,5)
-add(3,33,5)
-add(3,33,5)
-add(3,33,5)
+# new code from here
