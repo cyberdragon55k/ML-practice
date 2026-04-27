@@ -19,10 +19,12 @@ class employee:
 
 class Developer(Employee):
     def __init__(self, name, base_salary, programming_language):
-        # super() calls the constructor of the parent class (Employee)
         super().__init__(name, base_salary) 
         self.programming_language = programming_language
 
-    # Method Overriding (Polymorphism)
+
     def work(self):
         return f"{self.name} is writing brilliant code in {self.programming_language}."
+    
+
+aditya namdeo
