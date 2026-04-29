@@ -30,6 +30,6 @@ class Developer(Employee):
 
 
 
-hhhhhhhhh'
+hhhhhhhhh' # pyright: ignore[reportUndefinedVariable]
 
 hhhhhhhhhh
