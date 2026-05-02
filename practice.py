@@ -4,7 +4,20 @@ class libarayitem:
         self.creator = creator
         self._is_checked_out = False
 
-    def display_info(self):
-        status = "checked out " if self._is_checked_out else "available"
-        return f"'{self.title}' by {self.creator} - [{status}]"
-    
+
+
+
+
+
+
+
+
+
+
+hhh
+hash
+
+hhh
+hashh
+
+hasattr
