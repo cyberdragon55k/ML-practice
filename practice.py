@@ -12,3 +12,7 @@ class Robot:
 
 r1 = Robot("R2-D2", 1.0)
 print(r1.say_hello())
+
+
+
+print("aditya was here ")
