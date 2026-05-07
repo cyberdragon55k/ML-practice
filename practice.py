@@ -72,3 +72,17 @@ print("aditya was here ")
 print("111111111111111111111111111111" \
 "" \
 ")
+
+r1 = Robot("R2-D2", 1.0)
+print(r1.say_hello())
+
+
+
+print("aditya was here ")
+
+
+
+
+print("111111111111111111111111111111" \
+"" \
+")
