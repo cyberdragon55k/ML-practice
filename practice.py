@@ -1,88 +1,26 @@
-class Robot:
-    population = 0
+def find_majority_element(nums):
+    candidate = None
+    count = 0
 
-    def __init__(self, name, version):
-        self.name = name
-        self.version = version
-        Robot.population += 1
+    for num in nums:
+        if count == 0:
+            candidate = num
+            count = 1
 
+        elif num == candidate:
+            count +=1
+        else:
+            count -=1 
+
+    actual_count = 0
+    for num in nums:
+        if num == candidate:
+            actual_count +=1
     
-    def say_hello(self):
-        return f"Greetings. I am {self.name}, version {self.version}."
+    if actual_count > len(nums) //2:
+        return candidate
+    else:
+        return "no majority element exitsts"
 
-r1 = Robot("R2-D2", 1.0)
-print(r1.say_hello())
-
-
-
-print("aditya was here ")
-
-
-
-
-print("111111111111111111111111111111" \
-"" \
-")class Robot:
-    population = 0
-
-    def __init__(self, name, version):
-        self.name = name
-        self.version = version
-        Robot.population += 1
-
-    
-    def say_hello(self):
-        return f"Greetings. I am {self.name}, version {self.version}."
-
-r1 = Robot("R2-D2", 1.0)
-print(r1.say_hello())
-
-
-
-print("aditya was here ")
-
-
-
-
-print("111111111111111111111111111111" \
-"" \
-")
-class Robot:
-    population = 0
-
-    def __init__(self, name, version):
-        self.name = name
-        self.version = version
-        Robot.population += 1
-
-    
-    def say_hello(self):
-        return f"Greetings. I am {self.name}, version {self.version}."
-
-r1 = Robot("R2-D2", 1.0)
-print(r1.say_hello())
-
-
-
-print("aditya was here ")
-
-
-
-
-print("111111111111111111111111111111" \
-"" \
-")
-
-r1 = Robot("R2-D2", 1.0)
-print(r1.say_hello())
-
-
-
-print("aditya was here ")
-
-
-
-
-print("111111111111111111111111111111" \
-"" \
-")
+arr = [2,2,1,1,2,2]
+print(f"mojority element :{find_majority_element(arr)}")
