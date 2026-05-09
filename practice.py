@@ -24,3 +24,21 @@ def find_majority_element(nums):
 
 arr = [2,2,1,1,2,2]
 print(f"mojority element :{find_majority_element(arr)}")
+
+
+
+
+44444444444444444444444444
+
+
+4555555555
+
+
+
+
+
+5555555555566666
+666666666666
+
+66668
+88888888888
